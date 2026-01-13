@@ -455,25 +455,32 @@ section h2::after {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
 }
-
 .gallery-item {
     position: relative;
-    aspect-ratio: 4/3;
     background: linear-gradient(135deg, #05966920, #04785720);
     border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
-    border: 3px dashed #05966950;
+    border: 3px solid #05966920;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
 }
 
-.gallery-item:hover {
-    transform: scale(1.05) rotate(2deg);
-    box-shadow: 0 10px 30px rgba(5, 150, 105, 0.3);
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(5, 150, 105, 0.3);
+    border-color: #059669;
+}
+
 
 .gallery-item::after {
     content: 'Photo Placeholder';
